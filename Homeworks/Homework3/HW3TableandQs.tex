@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{chngpage}
+
+\title{HW3 Question Responses}
+\author{S. Mackie}
+\date{February 2020}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\begin{table}[h]
+    \begin{adjustwidth}{-1.5in}{-1.5in}
+        \centering
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+             & \textbf{Halo Mass} & \textbf{Disk Mass} & \textbf{Bulge Mass} & \textbf{Total Mass} & \textbf{Baryon Fraction}\\
+            \textbf{Galaxy Name} & ($10^{12}$\( M_\odot\)) & ($10^{12}$\( M_\odot\)) & ($10^{12}$\( M_\odot\)) & ($10^{12}$\( M_\odot\)) & (\(M_{baryon}/ M_{tot}\)) \\
+            \hline
+            \hline
+            Milky Way & 1.975 & 0.075 & 0.01 & 2.06 & 0.041\\
+            \hline
+            Andromeda (M31) & 1.921 & 0.12 & 0.019 & 2.06 & 0.067\\
+            \hline
+            Triangulum (M33) & 0.187 & 0.009 & 0.0 & 0.196 & 0.046\\
+            \hline
+            Local Group & 4.083 & 0.204 & 0.029 & 4.316 & 0.054\\
+            \hline
+        \end{tabular}
+        \end{center}
+        \caption{Values computed with GalaxyMass Jupyter notebook}
+    \end{adjustwidth}
+\end{table}
+
+\section{First Question}
+\textit{"How does the total mass of the MW and M31 compare in this simulation? What galaxy
+component dominates this total mass?"}
+
+The masses of the Milky Way and M31 are equivalent when rounded as they are in this table. The halo (dark matter) mass dominates the total mass of both.
+
+\section{Second Question}
+\textit{"How does the stellar mass of the MW and M31 compare? Which galaxy do you expect to be more luminous?"}
+
+The stellar mass can be found by summing the disk and bulge masses. The stellar mass of M31 (0.139\cdot$10^{12}$\( M_\odot\)) is greater than that of the Milky Way (0.085\cdot$10^{12}$\( M_\odot\)). As such, I expect M31 to be more luminous than the Milky Way.
+
+\section{Third Question}
+\textit{"How does the total dark matter mass of MW and M31 compare in this simulation
+(ratio)? Is this surprising, given their difference in stellar mass?"}
+\[\frac{M_{MWhalo}}{M_{M31halo}} = \frac{1.975\cdot10^{12}M_\odot}{1.921\cdot10^{12}M_\odot} = 1.028\]
+
+It is surprising that the Milky Way has a greater dark matter mass than M31. I would have thought stellar mass would be correlated with dark matter mass, that M31 would have a more massive halo. 
+
+\section{Fourth Question}
+\textit{"What is the ratio of stellar mass to total mass for each galaxy (i.e. the Baryon fraction)? In the Universe, \(\Omega_b/\Omega_m \sim\)16\% of all mass is locked up in baryons (gas \& stars) vs. dark matter. How does this ratio compare to the baryon fraction you computed for each galaxy? Given that the total gas mass in the disks of these galaxies is negligible compared to the stellar mass, any ideas for why the universal baryon fraction might differ from that in these galaxies?}
+
+See Column 6 of Table 1 for computed values of the baryon fraction (\(f_{bar}\)) for each galaxy and the local group as a whole. \(F_{bar}\) for the three galaxies ranges from about 4.1\% to 6.7\%, which is almost a quarter to a third of \(f_{bar}\) of the universe. This could mean that visible stars can't explain \(f_{bar}\) of the universe, and we can assume there is intergalactic material (such as gas) that is boosting the average universal \(f_{bar}\). On the other hand, this could indicate that dark matter is concentrated where stars are, and is more sparse in between galaxies.
+
+\end{document}
