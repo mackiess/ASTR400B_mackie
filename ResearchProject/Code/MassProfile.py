@@ -32,8 +32,7 @@ class MassProfile:
         # Gets rid of everything but the last 3 digits
         ilbl = ilbl[-3:]
         # Constructs the filename (ex. MW_000.txt) and saves it to a global property
-        # ROTATED COORDINATES 
-        self.filename = "%sRotated_"%(galaxy) + ilbl + '.txt'
+        self.filename = "%s_"%(galaxy) + ilbl + '.txt'
         
         # Read data in the given file using Read
         self.time, self.total, self.data = Read(self.filename)
@@ -45,6 +44,10 @@ class MassProfile:
         self.y = self.data['y'] * u.kpc
         self.z = self.data['z'] * u.kpc
         self.gname = galaxy
+        
+        # Putting G in the units we need to get the circ. vel. into km/s
+        # making it a global property so I don't have to do this again
+        self.G = G.to(u.kpc*u.km**2/u.s**2/u.Msun)
         
     # This function will calculate the mass enclosed w/in a given radius from the COM of 
     # the chosen galaxy and particle type
@@ -144,10 +147,6 @@ class MassProfile:
         #    r = distance from the center of the galaxy [kpc]
         # Returns: 
         #    an array of circular speeds [km/s]
-        
-        # Putting G in the units we need to get the circ. vel. into km/s
-        # making it a global property so I don't have to do this again
-        self.G = G.to(u.kpc*u.km**2/u.s**2/u.Msun)
                 
         # Getting the enclosed mass at each radius
         Menc = self.MassEnclosed(parttype,r)
