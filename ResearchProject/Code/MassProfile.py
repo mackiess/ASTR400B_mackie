@@ -76,12 +76,17 @@ class MassProfile:
         # in SumMass corresponds to one radius 
         SumMass = np.zeros(len(r))
 
+        #print(r)
+        #print(len(rMag))
+        #print(len(self.data['type']))
+        
         # Loops through for each radius
         for i in range(len(r)):
             
             # This will hold the index of any particle that is within the specified radius 
             # AND is the particle type we want
-            WithinR = np.where((rMag <= r[i]) & (self.data['type'] == parttype))
+            WithinR = np.where((rMag <= r[i]) & \
+                               (self.data['type'] == parttype))
             
             # checking the loop step and the radius at that step
             #print("Iteration: ",i," Radius: ",r[i])
